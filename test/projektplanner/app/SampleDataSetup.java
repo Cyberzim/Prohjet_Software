@@ -8,6 +8,7 @@ import org.junit.Before;
 public class SampleDataSetup {
 	
 	ProjectPlanner pp = new ProjectPlanner();
+
 	User user1;
 	User user2;
 	SuperUser superuser1;

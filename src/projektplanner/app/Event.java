@@ -12,8 +12,8 @@ public class Event {
 	List<User> users;
 
 	// Constructor
-	public Event(String name, String description, Date startDate, Date endDate,
-			User user) {
+	public Event(String name, String description, Date startDate, Date endDate, User user) 
+	{
 		users = new ArrayList<User>();
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -22,51 +22,29 @@ public class Event {
 	}
 
 	// Setters : Main methods for general descriptions
-	public void setName(String name) {
-		this.name = name;
-	}
+	public void setName(String name) { this.name = name; }
 	
-	public void setDesription(String description) {
-		this.description = description;
-	}
+	public void setDesription(String description) { this.description = description; }
 
-	public void setStartDate(Date date) {
-		startDate = date;
-	}
+	public void setStartDate(Date date) { startDate = date; }
 
-	public void setEndDate(Date date) {
-		endDate = date;
-	}
+	public void setEndDate(Date date) { endDate = date; }
 	
 	// Handle users
-	public void addUser(User user) {
-		users.add(user);
-	}
+	public void addUser(User user) { users.add(user); }
 	
-	public void removeUser (User user){
-		users.remove(user);
-	}
+	public void removeUser (User user) { users.remove(user); }
 	
 	// getters
-	public List<User> getUsers() {
-		return Collections.unmodifiableList(users);
-	}
+	public List<User> getUsers() { return Collections.unmodifiableList(users); }
 
-	public String getName() {
-		return new String(name);
-	}
+	public String getName() { return new String(name); }
 
-	public String getDesription() {
-		return new String(description);
-	}
+	public String getDesription() { return new String(description); }
 
-	public Date getStartDate() {
-		return new Date(startDate.getTime());
-	}
+	public Date getStartDate() { return new Date(startDate.getTime()); }
 
-	public Date getEndDate() {
-		return new Date(endDate.getTime());
-	}
+	public Date getEndDate() { return new Date(endDate.getTime()); }
 
 	@Override
 	public String toString() {

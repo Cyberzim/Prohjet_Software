@@ -92,8 +92,6 @@ public class ActivityTest {
 		
 		assertTrue(act.getWorkerTask().size() == 1);
 	
-		
-		
 	}
 	
 	@Test

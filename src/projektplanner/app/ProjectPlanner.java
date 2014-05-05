@@ -35,38 +35,31 @@ public class ProjectPlanner {
 	// Following are the main methods
 	
 	// register different users
-	public void registerUser(User user) throws OperationNotAllowedException {
+	public void registerUser(User user)  {
 //		if (!superUserLoggedIn)
 //			throw new OperationNotAllowedException("Register user");
 		user.setProjectPlanner(this);
 		users.add(user);
 	}
 	
-	public void registerProject(Project project) throws OperationNotAllowedException {
-<<<<<<< HEAD
-		if (!superUserLoggedIn)
-			throw new OperationNotAllowedException("Register project");
+	public void registerProject(Project project) {
+//		if (!superUserLoggedIn)
+//			throw new OperationNotAllowedException("Register project");
 		
 		if(!projects.contains(project))
 		{
 			project.setProjectPlanner(this);
 			projects.add(project);
 		}
-=======
-//		if (!superUserLoggedIn)
-//			throw new OperationNotAllowedException("Register project");
-		project.setProjectPlanner(this);
-		projects.add(project);
->>>>>>> 52e5dd0668fc7b71acfbbfe6661a74491966a8f3
 	}
 	
-	public void removeUser(User user) throws OperationNotAllowedException {
+	public void removeUser(User user) {
 //		if (!superUserLoggedIn)
 //			throw new OperationNotAllowedException("Register user");
 		users.remove(user);
 	}
 	
-	public void removeProject(Project project) throws OperationNotAllowedException {
+	public void removeProject(Project project) {
 //		if (!superUserLoggedIn)
 //			throw new OperationNotAllowedException("Register user");
 		projects.remove(project);

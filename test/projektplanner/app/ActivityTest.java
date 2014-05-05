@@ -111,6 +111,32 @@ public class ActivityTest {
 		
 	}
 	
+@Test
+public void workAndConditionsContainedInActivity()	{
+		
+		Activity act = new Activity("act 6","this is act 6");
+		
+		WorkerTask task3 = new WorkerTask(new User("1","jens"),37);
+		Activity condi3 = new Activity("condition 2","this is SPARTA");
+		
+		assertTrue(act.getPreconditions().size() == 0);
+		assertTrue(act.getWorkerTask().size() == 0);
+		
+		assertFalse(act.containsTask(task3));
+		assertFalse(act.containsConditions(condi3));
+		
+		act.addCondition(condi3);
+		act.addWorkerTask(task3);
+		
+		assertTrue(act.getPreconditions().size() == 1);
+		assertTrue(act.getWorkerTask().size() == 1);
+		
+		assertTrue(act.containsTask(task3));
+		assertTrue(act.containsConditions(condi3));
+		
+		
+	}
+	
 	
 
 }

@@ -120,4 +120,22 @@ public class Activity {
 	}
 
 
+	public boolean containsTask(WorkerTask task) {
+		for(WorkerTask w : taskList) {
+			if(w.equals(task)) {return true;}
+		}
+
+		return false;
+	}
+
+
+	public boolean containsConditions(Activity condition) {
+		for(Activity a : conditionList) {
+			if(a.equals(condition)) {return true;}
+		}
+
+		return false;
+	}
+
+
 }

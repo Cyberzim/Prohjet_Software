@@ -74,5 +74,4 @@ public class Event {
 				+ this.getStartDate() + "and Enddate: " + this.getEndDate()
 				+ "\n" + "Description: " + description;
 	}
-
 }

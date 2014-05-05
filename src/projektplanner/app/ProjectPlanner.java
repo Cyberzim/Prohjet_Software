@@ -24,10 +24,6 @@ public class ProjectPlanner {
 	}
 	
 	// Methods used to get list of user etc.
-	public List<SuperUser> getSuperUsers() {
-		return Collections.unmodifiableList(superUsers);
-	}
-	
 	public List<User> getUsers() {
 		return Collections.unmodifiableList(users);
 	}
@@ -39,13 +35,6 @@ public class ProjectPlanner {
 	// Following are the main methods
 	
 	// register different users
-	public void registerSuperUser(SuperUser superUser) throws OperationNotAllowedException {
-		if (!superUserLoggedIn)
-			throw new OperationNotAllowedException("Register superuser");
-		superUser.setProjectPlanner(this);
-		superUsers.add(superUser);
-	}
-	
 	public void registerUser(User user) throws OperationNotAllowedException {
 		if (!superUserLoggedIn)
 			throw new OperationNotAllowedException("Register user");
@@ -56,27 +45,27 @@ public class ProjectPlanner {
 	public void registerProject(Project project) throws OperationNotAllowedException {
 		if (!superUserLoggedIn)
 			throw new OperationNotAllowedException("Register project");
-		project.setProjectPlanner(this);
+		// project.setProjectPlanner(this);
 		projects.add(project);
 	}
 	
 	// Following are for searching for superuser, user and project
-	public Object search(String string) {
-		for (SuperUser superUser : superUsers) {
-			if (string.equals(superUser.getName())) {
-				return superUser;
-			}
-		}
-		for (User user : users) {
-			if (string.equals(user.getName())) {
-				return user;
-			}
-		}
-		for (Project project : projects) {
-			if (string.equals(project.getName())) {
-				return project;
-			}
-		}
-		return null;
-	}
+//	public Object search(String string) {
+//		for (SuperUser superUser : superUsers) {
+//			if (string.equals(superUser.getName())) {
+//				return superUser;
+//			}
+//		}
+//		for (User user : users) {
+//			if (string.equals(user.getName())) {
+//				return user;
+//			}
+//		}
+//		for (Project project : projects) {
+//			if (string.equals(project.getName())) {
+//				return project;
+//			}
+//		}
+//		return null;
+//	}
 }

@@ -21,10 +21,12 @@ public class Project {
 	private Date endDate;
 	
 	//Constructor
-	public Project(ProjectPlanner projectPlanner, String name){
+	public Project(ProjectPlanner projectPlanner, String name) throws OperationNotAllowedException{
 		this.id = projectPlanner.getNewProjectId();
 		this.projectPlanner = projectPlanner;
 		this.name = name;
+		
+		projectPlanner.registerProject(this);
 		
 		this.running = true;
 		this.activities = new ArrayList<Activity>();

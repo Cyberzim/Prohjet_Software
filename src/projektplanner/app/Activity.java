@@ -1,5 +1,3 @@
-package sourcecode;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +22,7 @@ public class Activity {
 	//constructor
 	public Activity (String name, String description) {
 		this.name = name;
-		this description = description;
+		this.description = description;
 		startDate = new Date();
 		
 		conditionList = new ArrayList<Activity>();

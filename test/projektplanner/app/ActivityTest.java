@@ -12,17 +12,32 @@ public class ActivityTest {
 	public void createAndChangeActivity()	{
 		
 		Activity act = new Activity("act 1","this is act 1");
+		
+		//test date
 		Date dat = new Date();
 
 		assertEquals(act.getStartDate(), dat);
 		
+		act.setStartDate(dat);
+		
+		assertEquals(dat,act.getStartDate());
+		
+		act.setEndDate(dat);
+		
+		assertEquals(act.getEndDate(),act.getStartDate());
+		
+		
+		//tjek other fields
 		act.setIfRunning(true);
 		act.setNomHours(15);
+		
 		
 		assertTrue(act.getName().equals("act 1"));
 		assertTrue(act.getDescription().equals("this is act 1"));
 		assertTrue(act.getNomHours() == 15);
-
+		assertTrue(act.getIfRunning() == true);
+		
+		//make changes
 		
 		act.setName("act 2");
 		assertTrue(act.getName().equals("act 2"));
@@ -63,8 +78,8 @@ public class ActivityTest {
 		
 		Activity act = new Activity("act 4","this is act 4");
 		
-		WorkerTask task1 = new WorkerTask(new User("1","Jens"),37);
-		WorkerTask task2 = new WorkerTask(new User("2","Hans"),15);
+		WorkerTask task1 = new WorkerTask(new User("1","jens"),37);
+		WorkerTask task2 = new WorkerTask(new User("1","lars"),37);
 		
 		assertTrue(act.getWorkerTask().size() == 0);
 		
@@ -73,11 +88,26 @@ public class ActivityTest {
 		
 		assertTrue(act.getWorkerTask().size() == 2);
 		
-		act.addWorkerTask(task1);
+		act.removeWorkerTask(task1);
 		
 		assertTrue(act.getWorkerTask().size() == 1);
 	
 		
+		
+	}
+	
+	@Test
+	public void addProjectToActivity()	{
+		
+		Activity act = new Activity("act 5","this is act 5");
+		Project project1 = new Project(new ProjectPlanner(), "røvhul");
+		
+		assertEquals(act.getOwner(),null);
+		
+		act.setOwner(project1);
+		
+		assertEquals(act.getOwner(),project1);
+	
 		
 	}
 	

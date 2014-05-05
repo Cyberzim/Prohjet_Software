@@ -23,6 +23,7 @@ public class Project {
 	
 	//Constructor
 	public Project(ProjectPlanner projectPlanner, String name){
+		this.id = projectPlanner.getNewProjectId();
 		this.projectPlanner = projectPlanner;
 		this.name = name;
 		

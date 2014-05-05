@@ -49,6 +49,19 @@ public class ProjectPlanner {
 		projects.add(project);
 	}
 	
+	public int getNewProjectId(){
+		if(projects.isEmpty())
+			return 1;
+		
+		int max = 0;
+		for(Project project : projects){
+			if(project.getId() > max)
+				max = project.getId();
+		}
+		
+		return max + 1;
+	}
+	
 	// Following are for searching for superuser, user and project
 //	public Object search(String string) {
 //		for (SuperUser superUser : superUsers) {

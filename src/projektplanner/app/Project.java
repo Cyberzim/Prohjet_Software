@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 package projektplanner.app;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+=======
+import java.util.Date;
+import java.util.List;
+
+
+>>>>>>> fabef1067ccb5b259eb70a997958bdcb6b59883d
 public class Project {
 	
 	private int id;
@@ -31,7 +38,11 @@ public class Project {
 	}
 	
 	//Setters & Getters
+<<<<<<< HEAD
 	public setRunning (boolean flag){
+=======
+	public setRunning(boolean flag){
+>>>>>>> fabef1067ccb5b259eb70a997958bdcb6b59883d
 		ifrunning = flag;
 	}
 	

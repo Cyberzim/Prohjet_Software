@@ -70,6 +70,15 @@ public class Activity {
 	public void addWorkerTask(WorkerTaskTest task) {
 		taskList.add(task);
 	}
+	
+	//list remover
+	public void removeCondition(Activity act) {
+		conditionList.remove(act);
+	}
+
+	public void removeWorkerTask(WorkerTask task) {
+		taskList.remove(task);
+	}
 
 
 	//getters

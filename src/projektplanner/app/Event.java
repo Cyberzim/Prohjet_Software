@@ -49,23 +49,23 @@ public class Event {
 	
 	// getters
 	public List<User> getUsers() {
-		return users;
+		return Collections.unmodifiableList(users);
 	}
 
 	public String getName() {
-		return name;
+		return new String(name);
 	}
 
 	public String getDesription() {
-		return description;
+		return new String(description);
 	}
 
 	public Date getStartDate() {
-		return startDate;
+		return new Date(startDate.getTime());
 	}
 
 	public Date getEndDate() {
-		return endDate;
+		return new Date(endDate.getTime());
 	}
 
 	@Override

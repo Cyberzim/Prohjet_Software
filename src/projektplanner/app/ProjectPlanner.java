@@ -31,7 +31,7 @@ public class ProjectPlanner {
 	public List<Project> getProjects() {
 		return Collections.unmodifiableList(projects);
 	}
-	
+	lol
 	// Following are the main methods
 	
 	// register different users

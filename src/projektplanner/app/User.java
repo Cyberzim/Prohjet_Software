@@ -4,6 +4,7 @@ public class User
 	private String ID;
 	private String name;
 	private int nomHours;
+	private ProjectPlanner projectPlanner;
 	//private ArrayList<Project> lProjects;
 	//private ArrayList<Event> lEvents;
 	
@@ -24,4 +25,6 @@ public class User
 	public void setNominatedHours(int nomHours) { this.nomHours = nomHours; }
 	
 	public boolean isSuperUser() { return false; }
+	
+	public void setProjectPlanner (ProjectPlanner pp) {projectPlanner = pp; }
 }

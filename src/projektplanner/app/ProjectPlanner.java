@@ -36,13 +36,14 @@ public class ProjectPlanner {
 	
 	// register different users
 	public void registerUser(User user) throws OperationNotAllowedException {
-		if (!superUserLoggedIn)
-			throw new OperationNotAllowedException("Register user");
+//		if (!superUserLoggedIn)
+//			throw new OperationNotAllowedException("Register user");
 		user.setProjectPlanner(this);
 		users.add(user);
 	}
 	
 	public void registerProject(Project project) throws OperationNotAllowedException {
+<<<<<<< HEAD
 		if (!superUserLoggedIn)
 			throw new OperationNotAllowedException("Register project");
 		
@@ -51,17 +52,23 @@ public class ProjectPlanner {
 			project.setProjectPlanner(this);
 			projects.add(project);
 		}
+=======
+//		if (!superUserLoggedIn)
+//			throw new OperationNotAllowedException("Register project");
+		project.setProjectPlanner(this);
+		projects.add(project);
+>>>>>>> 52e5dd0668fc7b71acfbbfe6661a74491966a8f3
 	}
 	
 	public void removeUser(User user) throws OperationNotAllowedException {
-		if (!superUserLoggedIn)
-			throw new OperationNotAllowedException("Register user");
+//		if (!superUserLoggedIn)
+//			throw new OperationNotAllowedException("Register user");
 		users.remove(user);
 	}
 	
 	public void removeProject(Project project) throws OperationNotAllowedException {
-		if (!superUserLoggedIn)
-			throw new OperationNotAllowedException("Register user");
+//		if (!superUserLoggedIn)
+//			throw new OperationNotAllowedException("Register user");
 		projects.remove(project);
 	}
 	
@@ -74,27 +81,27 @@ public class ProjectPlanner {
 			if(project.getId() > max)
 				max = project.getId();
 		}
-		
 		return max + 1;
 	}
 	
 	// Following are for searching for superuser, user and project
-//	public Object search(String string) {
-//		for (SuperUser superUser : superUsers) {
-//			if (string.equals(superUser.getName())) {
-//				return superUser;
-//			}
-//		}
-//		for (User user : users) {
-//			if (string.equals(user.getName())) {
-//				return user;
-//			}
-//		}
-//		for (Project project : projects) {
-//			if (string.equals(project.getName())) {
-//				return project;
-//			}
-//		}
-//		return null;
-//	}
+	public List<User> searchForUser(String name) {
+		List<User> list = new ArrayList<User>();
+		for (User user : users) {
+			if (name.contains(user.getName())) {
+				list.add(user);
+			}
+		}
+		
+		return list;
+	}
+	public List<Project> searchForProject (String name){
+		List<Project> list = new ArrayList<Project>();
+		for (Project project : projects) {
+			if (name.contains(project.getName())) {
+				list.add(project);
+			}
+		}
+		return list;
+	}
 }

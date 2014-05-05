@@ -21,9 +21,8 @@ public class Project {
 	private Date endDate;
 	
 	//Constructor
-	public Project(ProjectPlanner projectPlanner, String name) throws OperationNotAllowedException{
+	public Project(String name){
 		this.id = projectPlanner.getNewProjectId();
-		this.projectPlanner = projectPlanner;
 		this.name = name;
 		
 		projectPlanner.registerProject(this);
@@ -41,6 +40,7 @@ public class Project {
 	public void setDescription(String description){ this.description = description; }
 	public void setStartDate(Date startDate){ this.startDate = startDate; }
 	public void setEndDate(Date endDate){ this.endDate = endDate; }
+	public void setId(int id){ this.id = id; }
 	
 	//Getters
 	public int getId(){ return id; }
@@ -74,7 +74,7 @@ public class Project {
 	}
 	
 	public void setProjectPlanner (ProjectPlanner pp){
-		projectPlanner = pp;
+		this.projectPlanner = pp;
 	}
 		
 	//Checks if user is project leader or super user

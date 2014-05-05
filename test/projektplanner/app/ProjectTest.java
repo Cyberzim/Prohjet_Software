@@ -14,8 +14,8 @@ public class ProjectTest {
 	
 	@Test
 	public void addNewProject(){
-		Project project = new Project(projectPlanner, "Project1");
-		
+		Project project = new Project("Project1");
+		projectPlanner.registerProject(project);
 		assertEquals("Project1", project.getName());
 		assertEquals(1, project.getId());
 		assertEquals(1, projectPlanner.getProjects().size());	

@@ -45,8 +45,12 @@ public class ProjectPlanner {
 	public void registerProject(Project project) throws OperationNotAllowedException {
 		if (!superUserLoggedIn)
 			throw new OperationNotAllowedException("Register project");
-		project.setProjectPlanner(this);
-		projects.add(project);
+		
+		if(!projects.contains(project))
+		{
+			project.setProjectPlanner(this);
+			projects.add(project);
+		}
 	}
 	
 	public void removeUser(User user) throws OperationNotAllowedException {

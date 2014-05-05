@@ -1,10 +1,11 @@
 package projektplanner.app;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import java.util.Date;
+import java.util.List;
 
 public class Project {
 	
@@ -22,6 +23,7 @@ public class Project {
 	
 	//Constructor
 	public Project(ProjectPlanner projectPlanner, String name){
+		this.id = projectPlanner.getNewProjectId();
 		this.projectPlanner = projectPlanner;
 		this.name = name;
 		
@@ -32,47 +34,13 @@ public class Project {
 		this.startDate = new Date();
 	}
 	
-	//Setters
-	public void setRunning(boolean flag){ running = flag; }
-	public void setName(String name){ this.name = name; }
-	public void setDescription(String description){ this.description = description; }
-	public void setStartDate(Date startDate){ this.startDate = startDate; }
-	public void setEndDate(Date endDate){ this.endDate = endDate; }
-	
-	//Getters
-	public int getId(){ return id; }
-	public boolean isRunning(){ return running; }
-	public List<Activity> getActivities(){ return Collections.unmodifiableList(activities); }
-	public List<User> getUsers(){ return Collections.unmodifiableList(users); }
-	public List<User> getProjectLeaders(){ return Collections.unmodifiableList(projectLeaders); }
-	public String getName(){ return new String(name); }
-	public String getDescription(){ return new String(description); }
-	public Date getStartDate(){ return new Date(startDate.getTime()); }
-	public Date getEndDate(){ return new Date(endDate.getTime()); }
-	
-	//Add user to project
-	public void addUser(User user){
-		if(!users.contains(user))
-			users.add(user);
+	//Setters & Getters
+	public setRunning(boolean flag){
+		ifrunning = flag;
 	}
-	
-	//Add projectleader
-	public void addProjectLeader(User user){
-		if(!users.contains(user))
-			users.add(user);
-		if(!projectLeaders.contains(user))
-			projectLeaders.add(user);
-	}
-	
-	//Add activity
-	public void addActivity(Activity activity){
-		if(!activities.contains(activity))
-			activities.add(activity);
-	}
-		
 	
 	//Checks if user is project leader or super user
-	public boolean isProjectLeader(User user){
+	public isProjectLeader(User user){
 		if(projectLeaders.contains(user) ||
 				user.isSuperUser())
 			return true;

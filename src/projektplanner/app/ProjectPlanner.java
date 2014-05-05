@@ -45,8 +45,20 @@ public class ProjectPlanner {
 	public void registerProject(Project project) throws OperationNotAllowedException {
 		if (!superUserLoggedIn)
 			throw new OperationNotAllowedException("Register project");
-		// project.setProjectPlanner(this);
+		project.setProjectPlanner(this);
 		projects.add(project);
+	}
+	
+	public void removeUser(User user) throws OperationNotAllowedException {
+		if (!superUserLoggedIn)
+			throw new OperationNotAllowedException("Register user");
+		users.remove(user);
+	}
+	
+	public void removeProject(Project project) throws OperationNotAllowedException {
+		if (!superUserLoggedIn)
+			throw new OperationNotAllowedException("Register user");
+		projects.remove(project);
 	}
 	
 	public int getNewProjectId(){

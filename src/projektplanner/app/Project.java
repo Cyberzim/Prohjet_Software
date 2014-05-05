@@ -70,8 +70,11 @@ public class Project {
 		if(!activities.contains(activity))
 			activities.add(activity);
 	}
-		
 	
+	public void setProjectPlanner (ProjectPlanner pp){
+		projectPlanner = pp;
+	}
+		
 	//Checks if user is project leader or super user
 	public boolean isProjectLeader(User user){
 		if(projectLeaders.contains(user) ||

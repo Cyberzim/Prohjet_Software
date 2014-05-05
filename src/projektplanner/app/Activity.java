@@ -18,7 +18,7 @@ public class Activity {
 	//lists
 
 	List<Activity> conditionList;
-	List<WorkerTask> taskList;
+	List<WorkerTaskTest> taskList;
 	
 	
 	//constructor
@@ -28,7 +28,7 @@ public class Activity {
 		startDate = new Date();
 		
 		conditionList = new ArrayList<Activity>();
-		taskList = new ArrayList<WorkerTask>();
+		taskList = new ArrayList<WorkerTaskTest>();
 	}
 	
 	
@@ -67,7 +67,7 @@ public class Activity {
 		conditionList.add(act);
 	}
 
-	public void addWorkerTask(WorkerTask task) {
+	public void addWorkerTask(WorkerTaskTest task) {
 		taskList.add(task);
 	}
 
@@ -106,7 +106,7 @@ public class Activity {
 		return conditionList;
 	}
 
-	public List<WorkerTask> getWorkerTask() { 
+	public List<WorkerTaskTest> getWorkerTask() { 
 		return taskList;
 	}
 

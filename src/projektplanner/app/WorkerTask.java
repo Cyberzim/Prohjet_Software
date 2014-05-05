@@ -1,18 +1,18 @@
 package projektplanner.app;
-import midlertidig.User;
 
-
-public class WorkerTask {
-	
+public class WorkerTask 
+{	
 	// Fields
 	User user;
-	int iHours;
+	int hours;
 	
 	// Constructor
-	public WorkerTask (User user, int iHours){
+	public WorkerTask (User user, int hours){
 		this.user = user;
-		this.iHours = iHours;
+		this.hours = hours;
 	}
 	
+	public User getUser() { return user; }
 	
+	public int getHours() { return hours; }
 }

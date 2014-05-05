@@ -12,7 +12,7 @@ public class Event {
 	List<User> users;
 
 	// Constructor
-	public Event(String name, String description, Date startDate, Date endDate, User user) 
+	public Event(String name, String description, Date startDate, Date endDate) 
 	{
 		users = new ArrayList<User>();
 		this.startDate = startDate;

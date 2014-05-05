@@ -14,9 +14,9 @@ public class User
 		this.name = name;
 	}
 	
-	public String getID() { return ID; }
+	public String getID() { return new String(ID); }
 	
-	public String getName() { return name; }
+	public String getName() { return new String(name); }
 	
 	public void setID(String ID) { this.ID = ID; }
 	

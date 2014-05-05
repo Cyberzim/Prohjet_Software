@@ -1,3 +1,5 @@
+package projektplanner.app;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +18,7 @@ public class Activity {
 	//lists
 
 	List<Activity> conditionList;
-	List<WorkerTask> taskList;
+	List<WorkerTaskTest> taskList;
 	
 	
 	//constructor
@@ -26,7 +28,7 @@ public class Activity {
 		startDate = new Date();
 		
 		conditionList = new ArrayList<Activity>();
-		taskList = new ArrayList<WorkerTask>();
+		taskList = new ArrayList<WorkerTaskTest>();
 	}
 	
 	
@@ -65,8 +67,17 @@ public class Activity {
 		conditionList.add(act);
 	}
 
-	public void addWorkerTask(WorkerTask task) {
+	public void addWorkerTask(WorkerTaskTest task) {
 		taskList.add(task);
+	}
+	
+	//list remover
+	public void removeCondition(Activity act) {
+		conditionList.remove(act);
+	}
+
+	public void removeWorkerTask(WorkerTask task) {
+		taskList.remove(task);
 	}
 
 
@@ -104,7 +115,7 @@ public class Activity {
 		return conditionList;
 	}
 
-	public List<WorkerTask> getWorkerTask() { 
+	public List<WorkerTaskTest> getWorkerTask() { 
 		return taskList;
 	}
 

@@ -1,6 +1,4 @@
 package projektplanner.app;
-import midlertidig.User;
-
 
 public class WorkerTask {
 	
